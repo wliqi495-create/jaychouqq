@@ -236,7 +236,7 @@
   { "name": "📺CK", "api": "https://ckzy.me/api.php/provide/vod/" },
   { "name": "📺天涯",  "api": "https://tyyszyapi.com/api.php/provide/vod/" },
   { "name": "📺鲨鱼2",  "api": "https://shayuzy5.com/api.php/provide/vod/" },
-  { "name": "📺JS聚",  "api": "http://zhangqun1818.serv00.net/js.php" },
+  { "name": "📺荐片",  "api": "http://zhangqun1818.serv00.net:6628/?spider=荐片" },
   { "name": "📺奇艺", "api": "https://iqiyizyapi.com/api.php/provide/vod/" },
   { "name": "📺魔都", "api": "https://www.mdzyapi.com/api.php/provide/vod/" },
   { "name": "📺茅台", "api": "https://caiji.maotaizy.cc/api.php/provide/vod/" },
