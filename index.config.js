@@ -168,6 +168,8 @@ var index_config_default = {
       address: "http://zhangqun1818.serv00.net:5052/?sp=土豆浏览器"},
       {name: "📺奇优",
       address: "http://zhangqun1818.serv00.net:5052/?sp=奇优动漫"},
+     {name: "📺鬼片之家",
+      address: "http://zhangqun1818.serv00.net:6628/?spider=鬼片之家"},
     {name: "📺小鸭子",
       address: "http://zhangqun1818.serv00.net:5052/?sp=小鸭子看看"},
      {name: "🎦iptv",
