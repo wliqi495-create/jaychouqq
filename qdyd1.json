@@ -208,7 +208,7 @@
     "searchable": true,
     "discoverable": true
   },
-  { "name": "📺麻豆2", "api": "https://php.doube.eu.org/spider/php/麻豆.php" },
+  { "name": "📺优质", "api": "https://api.yzzy-api.com/inc/apijson.php" },
   { "name": "📺如意", "api": "https://cj.rycjapi.com/api.php/provide/vod/from/rym3u8", "discoverable": false },
   { "name": "📺红牛", "api": "https://www.hongniuzy2.com/api.php/provide/vod/from/hnm3u8/" },
   { "name": "📺豪华", "api": "https://hhzyapi.com/api.php/provide/vod/from/hhm3u8/" },
@@ -219,6 +219,7 @@
   { "name": "📺央视", "api": "https://catbox.n13.club/18/央视影视.php" },
   { "name": "📺速播", "api": "https://subocaiji.com/api.php/provide/vod/from/subm3u8/" },
   { "name": "📺麻豆", "api": "http://chujia.cc/api.php/provide/vod/" },
+  { "name": "📺采集", "api": "http://zhangqun66.xyz/cjjh.php" },
   { "name": "📺360", "api": "https://360zyzz.com/api.php/provide/vod/" },
   { "name": "📺淘片", "api": "https://www.taopianzy.com/cjapi/mc/vod/json.html" },
   { "name": "📺电影天堂", "api": "http://dyttzy2.tv/api.php/provide/vod/" },
