@@ -398,7 +398,7 @@ address: "https://www.mandao.cc/api.php/provide/vod/"}
 
     {
       name: "国外直播",
-      url: "https://down.nigx.cn/iptv-org.github.io/iptv/index.m3u",
+      url: "https://proxy.api.030101.xyz/iptv-org.github.io/iptv/index.m3u",
       ua: "okhttp/3.15",
       enabled: true,
       logoUrl: ""
