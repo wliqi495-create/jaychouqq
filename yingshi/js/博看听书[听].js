@@ -5,68 +5,8 @@
   quickSearch: 0,
   title: '博看听书',
   '类型': '听书',
-  lang: 'ds'
+  lang: 'dr2'
 })
 */
 
-var rule = {
-    类型: '听书',
-    title: '博看听书',
-    host: 'https://api.bookan.com.cn',
-    homeUrl: '/voice/book/list?instance_id=25304&page=1&category_id=1305&num=24',
-    url: '/voice/book/list?instance_id=25304&page=fypage&category_id=fyclass&num=24',
-    detailUrl: '/voice/album/units?album_id=fyid&page=1&num=200&order=1',
-    searchUrl: 'https://es.bookan.com.cn/api/v3/voice/book?instanceId=25304&keyword=**&pageNum=fypage&limitNum=20',
-    author: 'EylinSir',
-    logo: 'https://pp.myapp.com/ma_icon/0/icon_52647879_1746000007/256',
-    hikerListCol: 'icon_4',
-    searchable: 2,
-    quickSearch: 0,
-    class_name: '少年读物&儿童文学&国学经典&文艺少年&育儿心经&心理哲学&青春励志&历史小说&故事会&音乐戏剧&相声评书',
-    class_url: '1305&1304&1320&1306&1309&1310&1307&1312&1303&1317&1319',
-    headers: {'User-Agent': 'MOBILE_UA'},
-    lazy: async function() {
-        let {input} = this;
-        return input;
-    },
-    推荐: '*',
-    一级: 'json:data.list;name;cover;extra.author;id',
-    二级: async function () {
-        let {input} = this;
-        let d = [];
-        let VOD = {
-            vod_url: input,
-            vod_name: "",
-            vod_actor: "",
-            vod_year: "",
-            vod_director: ""
-        };
-        let playlists = [];
-        let data = JSON.parse(await request(input)).data;
-        VOD.vod_name = data.list[0].id;
-        VOD.vod_actor = "▶️创建于" + data.list[0].created_at;
-        VOD.vod_year = data.list[0].created_at.split("-")[0];
-        VOD.vod_director = "▶️更新于" + data.list[0].updated_at;
-        let total = data.total;
-        playlists = data.list;
-        if (total > 200) {
-            for (let i = 2; i < total / 200 + 1; i++) {
-                let listUrl = input.split("&")[0] + "&page=" + i + "&num=200&order=1";
-                let data = JSON.parse(await request(listUrl)).data;
-                playlists = playlists.concat(data.list)
-            }
-        }
-        playlists.forEach(function (it) {
-            d.push({
-                title: it.title,
-                url: it.file
-            })
-        });
-        VOD.vod_play_from = "bookan";
-        VOD.vod_play_url = d.map(function (it) {
-            return it.title + "$" + it.url
-        }).join("#");
-        return VOD
-    },
-    搜索: '*',
-}
+H4sIAEIfMGcC/5VVW28bRRR+769YLWi9TtL1rQXVxlRF9KGIJg9VeKmqdLI7jidZ725nZt1alSVELzRNGxsQATUFJFBbEKCkIUKJA8p/qTy2+8RfYGb24qzXRWIfdmfO9TvfOTPbBFjBvg2VqnL7lMKf4csj9v1GWcmw7m/9w+eZOSmliNpQCB8/GT7dSKjqLqFcU6fUI+VcDnjIWHbdNeAYptswTCc2a8BFbHPLXNNFJswJo5yNCD2PHEKBY8IlZFWLZ0v5M5oHVmC1oJmAwhUXt4SiUMqf1Ry/US2eCSP6/ytarSU+iZC1lmkDQpJRLUgBshNIgb3sN3K+gyg5L9eBM7IinDJAPq+52IK4WggjEQiwWQ8iRexAkiRH0JVrlk4UEeO/FMFfg62bPHJ1Zkbmm+fJwmJs1EB0XiZP5ATLolnFQHTDR+baFSkvK/lAJuteckBD9nT3C3a4P9o5Gq7/orG7x8Nfnw22Pme/P9fY9t/8MzzqsHsHGpeN1nuBsTb6bI9bsuM7XKmJT/c++2pP+Lz+7svBt8/Yw5fs+BuNbd5nnT222xnt7GuDr+/1exv9v55or3/4o3/YHTzosPUX2nD7gP20O9q5Ox6pAF7QX9n3guChUCrmxeod8TrHXwW5fVesimJVEiu5PRcNHQS8I6Ss3M4sEohPX1iBDs3wqJcXPrj08cWlxQuZdmA52Px59LjLNTOha//g02HvBResEtcpW4ACQ4xXRZBWMd0mxBV4i2JgAJ/WXVxBVuTYeyQdr6+SshSIx4ZUsfgZu3qtEss+WfgwPnXR03StoG7keD6dS+mClqlqWgNM6uLpqhZv/nSNhTCM/GJlu5KA7dmgJSonE/BlSZwWLv7oysK84QFMoI7hDR8Sqkv82awhLBIlG1EZ3C9m9Wr+moGstJ0sihuqr7b+/Oegwx5ss6Nev7epKrNJZxNDfrC5A00HEeVPJhvbG8SzEdXV02qWK9LeEUVjFIPt/cHW7jQUvmelUAiaqEuBHUGQm7H+JL3jKYvVqKbogfv7Cr9ishPzUuPAdJECcfdihX/eC7PlhDkHWODC2dlJvwiZSMZvKO4sGxaRoUkyuLcaXHGiUiS3E1edWpka9s1zESZMTcY0OuI1vywdfnHrMT/ZhF/7VHo19uUUXQRmXa/5jkmR6+iITrJhGZ5P6nqaovC3h6ghV3Mpg+CsUqOGbJjENIbYzqanSsBbqmG3IcYq+COob7DyZXssowG8/6oBQ+pjJ4YqmvW2bBs1eIQTYIxVFzm6+pYawroeXoDdp8P9H8MLsP0vwhOMRRcIAAA=
