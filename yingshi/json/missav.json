@@ -1,0 +1,72 @@
+{
+"uuid":"6ed73adf-8c3e-46dd-a8cd-64a7dfe491d2",
+"title":"missav",
+"episode_flag":false,
+"landscape_flag":true,
+"referer":"https://missav.ws",
+"user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36",
+"open_with_safari_flag":true,
+"category": [{
+			"title": "最近更新",
+			"url0": "https://missav.ws/dm515/new",
+			"url1": "https://missav.ws/dm515/new?page={pg}"
+		},
+	{
+			"title": "新作上市",
+			"url0": "https://missav.ws/dm590/release",
+			"url1": "https://missav.ws/dm590/release?page={pg}"
+		},
+	{
+			"title": "中文字幕",
+			"url0": "https://missav.ws/dm265/chinese-subtitle",
+			"url1": "https://missav.ws/dm265/chinese-subtitle?page={pg}"
+		},
+	{
+			"title": "麻豆",
+			"url0": "https://missav.ws/dm35/madou",
+			"url1": "https://missav.ws/dm35/madou?page={pg}"
+		},
+		{
+			"title": "无码流出",
+			"url0": "https://missav.ws/dm628/uncensored-leak",
+			"url1": "https://missav.ws/dm628/uncensored-leak?page={pg}"
+		},
+		{
+			"title": "fc2",
+			"url0": "https://missav.ws/dm150/fc2",
+			"url1": "https://missav.ws/dm150/fc2?page={pg}"
+		},
+		{
+			"title": "luxu",
+			"url0": "https://missav.ws/dm21/luxu",
+			"url1": "https://missav.ws/dm21/luxu?page={pg}"
+		}
+	],    
+"vod_node":"//div[@class='thumbnail group']",
+"vod_info":"",
+"vod_score":"//span[contains(@class, 'absolute')]",
+"vod_title":"//a[contains(@class, 'text-secondary')]",
+"vod_image_id":"//img/@data-src",
+"vod_image_regex":"",
+"vod_image_url":"{id}",
+"vod_link_id":"//a[contains(@class, 'text-secondary')]/@href",
+"vod_link_url":"{id}",
+"play_regex":"",
+"play_url":"{id}",
+"playlist_flag":false,
+"playlist_group_node":"",
+"playlist_title":"",
+"playlist_link_id":"",
+"playlist_link_url":"",
+"playlist_info":"",
+"search_flag":true,
+"search_url_first_page":"https://missav.ws/search/{wd}",
+"search_url_other_page":"https://missav.ws/search/{wd}?page={pg}",
+"search_vod_node":"//div[@class='thumbnail group']",
+"search_vod_title":"//a[contains(@class, 'text-secondary')]",
+"search_vod_image_id":"//img/@data-src",
+"search_vod_image_regex":"",
+"search_vod_image_url":"{id}",
+"search_vod_link_id":"//a[contains(@class, 'text-secondary')]/@href",
+"search_vod_link_url":"{id}"
+}
