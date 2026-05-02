@@ -298,7 +298,7 @@
         {
             "name": "AV-百花资源",
             "api": "https://bhziyuan.com/api.php/provide/vod/",
-            "detail": "https://api.bwzyz.com",
+            "detail": "https://bhziyuan.com",
             "bz": "0",
             "paichu": "1,2,3,4"
         },
@@ -522,7 +522,7 @@
         {
             "name": "AV-豆豆资源",
             "api": "https://api.douapi.cc/api.php/provide/vod/",
-            "detail": "https://api.sexnguon.com",
+            "detail": "https://api.douapi.cc",
             "bz": "1",
             "paichu": "1,2,3,4"
         },
