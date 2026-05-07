@@ -47,12 +47,15 @@
       "type": 3,
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/js/爱看机器人.js"
     },
-{
-      "key": "达达兔影院",
+    {
+      "key": "达达兔影院.js",
       "name": "💥达达兔影院💥",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/js3/达达兔影院.js"
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/js/drpy2.min.js",
+      "changeable": 0,
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/js3/达达兔影院.js"
     },
+
 {
       "key": "妹子视频爬取",
       "name": "💥妹子视频爬取💥",
@@ -65,12 +68,7 @@
       "type": 3,
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/py3/酷爱爬取.py"
     },
-{
-      "key": "js3444",
-      "name": "💥js3💥",
-      "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/js3/yyff.js"
-    },
+   
     {
       "key": "农民影视",
       "name": "💥农民影视💥",
