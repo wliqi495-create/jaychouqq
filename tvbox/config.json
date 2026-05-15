@@ -304,13 +304,6 @@
       "type": 3,
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/py/1撸一天.py"
     },
- {
-      "key": "AAZ音乐网.py",
-      "name": "💞AAZ音乐网💞",
-      "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/py3/AAZ音乐网.py"
-    },
- 
     {
       "key": "18.py",
       "name": "💞十八💞",
@@ -2628,8 +2621,14 @@
       "ua": "okhttp",
       "url": "http://tv123.vvvv.ee/tv.m3u"
     },
+     {
+      "name": "🐬监控国际",
+      "type": 0,
+      "ua": "okhttp",
+      "url": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/监控.m3u"
+    },
     {
-      "name": "🐬中港台直播源",
+      "name": "🐬易发直播源",
       "type": 0,
       "ua": "okhttp",
       "url": "https://down.nigx.cn/raw.githubusercontent.com/fafa002/yf2025/refs/heads/main/yiyifafa.txt"
