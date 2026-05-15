@@ -1,0 +1,36 @@
+#EXTM3U
+#EXT-X-APP APTV
+#EXT-X-APTV-TYPE blank
+
+#EXTINF:-1 tvg-logo="https://www.logo.wine/a/logo/Playboy_Club/Playboy_Club-Logo.wine.svg" group-title="未分类",Playboy TV
+https://s.oxax.tv/6/index.m3u8?k=1778811054p61i081i921i301Sc0cdbc10dcd3c132b567aa803c8cb247
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/df/Babes_TV.svg/revision/latest?cb=20211001144154" group-title="国际",Babes
+http://88.212.7.11/live/test_basbes_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://logos-world.net/wp-content/uploads/2021/09/Brazzers-Logo.png" group-title="国际",Brazzers
+http://88.212.7.11/live/test_brazzers_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://www.eu-startups.com/wp-content/uploads/2022/08/extasy-logo.webp" group-title="国际",Extasy
+http://88.212.7.11/live/test_extasy_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq73R3avMek7qaUbrUnIkI-8FdKMGUPua5xGhAAivQfg&s=10" group-title="国际",Erox
+http://88.212.7.11/live/test_erox_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Dorcel_TV.svg/960px-Dorcel_TV.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" group-title="国际",Dorcel
+http://88.212.7.11/live/test_dorcel_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://cdn-media.original-group.com/wp-content/uploads/2026/01/14135943/desire-isotipo-sm.png" group-title="国际",Desire
+http://88.212.7.11/live/test_desire_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/7f/Leo_TV.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" group-title="国际",Leo HD
+http://88.212.7.11/live/test_leo_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://logowik.com/content/uploads/images/reality-kings4107.logowik.com.webp" group-title="国际",Reality Kings
+http://88.212.7.11/live/test_realitykings_sd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/7/70/EroXXX.svg/revision/latest?cb=20191216100624" group-title="国际",Eroxxx
+http://88.212.7.11/live/test_eroxxx_hd_hevc/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/d/d4/Vivid.png/revision/latest?cb=20180213192129" group-title="未分类",VIVIDRED
+https://s.oxax.tv/7/index.m3u8?k=1778818444p61i081i921i301S66d2cb5afb3ac406cd29fc6866816b3f
+#EXTINF:-1 tvg-logo="https://www.cns-net-tw.speedycdn.click/web/upload/20141014174815AC3NVWC.png" group-title="未分类",松视1台
+http://15.204.105.50:25461/live/G2s9zK2n9m/xDtwVfWM8T/88.ts
+#EXTINF:-1 tvg-logo="https://www.cns-net-tw.speedycdn.click/web/upload/20141017171414PCw2jYN.png" group-title="未分类",松视2台
+http://15.204.105.50:25461/live/G2s9zK2n9m/xDtwVfWM8T/89.ts
+#EXTINF:-1 tvg-logo="https://www.cns-net-tw.speedycdn.click/web/upload/201410171714027yS2M7G.png" group-title="未分类",松视3台
+http://15.204.105.50:25461/live/G2s9zK2n9m/xDtwVfWM8T/90.ts
+#EXTINF:-1 tvg-logo="https://epg.pw/media/images/epg/2025/09/17/20250917053716545805_39.jpg" group-title="未分类",松视4台
+https://u.kstore.space/download/8504/苹果香2.mp4
+#EXTINF:-1 tvg-logo="https://logowik.com/content/uploads/images/pinko4655.logowik.com.webp" group-title="未分类",Pink O TV
+https://s.oxax.tv/22/index.m3u8?k=1778816386p61i081i921i301S5f54560f5488f0897d79afc5ddcbd6f2
