@@ -2574,12 +2574,6 @@
   ],
   "lives": [
     {
-      "name": "🐬地方直播",
-      "type": 0,
-      "ua": "okhttp/5.3.2",
-      "url": "./ext/interface.txt"
-    },
-    {
       "name": "🐬地方直播2",
       "type": 0,
       "ua": "okhttp/5.3.2",
