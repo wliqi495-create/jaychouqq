@@ -37,7 +37,19 @@
       "ext": "YoutubeSpider$$$新闻直播#PL谍战剧#PD短剧#萌宝短剧#经典音乐#PL动作片#PL科幻片#PD沙雕穿越#中国动漫#PL宝宝巴士#PL动物#PL风光#放松#PL海洋#太空#穿越短剧#PLFashion Lingerie Show#PD VEVO#PL小说",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/jar1/laozhang.jar"
     },
-    
+    {
+      "key": "哔哩lz",
+      "name": "💥哔哩哔哩2💥",
+      "type": 3,
+      "api": "csp_ProxySpider",
+      "style": {
+        "type": "rect",
+        "ratio": 1.33
+      },
+      "ext": "Bilibili",
+      "changeable": 1,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/yingshi/jar1/laozhang.jar"
+    },
     {
       "key": "葡萄5区",
       "name": "💥葡萄5区💥",
