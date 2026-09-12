@@ -1,0 +1,1197 @@
+{
+    "video": {
+        "sites": [
+           
+
+             
+           	
+    	
+
+              {
+                "key": "bililive",
+                "name": "🏓多多丨哔哩直播",
+                "type": 3,
+                "api": "bililive_bytecode.js"
+                ,"ext": {"cookie": "SESSDATA=01c79709%2C1711618905%2C244c3%2A91CjA9UUnRb_kJg03J5FqUbin76yMY90o1-ckJsM1ItQH21ns4hgcS6Le6oMR3SKtC18QSVmxSbGRhN3cyS3NReERsOHRfYVlhTWJKZjZyTF9wUWJXbjNfaF9qWklFMFpoeVg1ZUhFb0Q0MGFiN3FYd1N3UEFEY1oxX29IdmFSRVVLamcybGhhSkJnIIEC; bili_jct=e9d6e9df733afde2a03693d63a4e77dc; DedeUserID=186957646; DedeUserID__ckMd5=4f717c8832ee1e62; sid=elhiqom1"}
+            },
+        
+            
+        
+           
+           
+             
+             {
+                "key": "ff22",
+                "name": "🏓多多丨ff4",
+                "type": 3,
+                "api": "ff_open.js"
+            },
+           
+            
+             {
+                "key": "5555",
+                "name": "🏓多多丨qm5555",
+                "type": 3,
+                "api": "rttks_open.js"
+            },
+            
+           
+             
+
+            
+            {
+                "key": "mifanke",
+                "name": "🏓多多丨米饭客",
+                "type": 3,
+                "api": "zjm_open.js"
+            },	
+            	
+           
+          	
+            
+            
+           	
+            {
+                "key": "douban",
+                "name": "🏓多多丨豆瓣",
+                "type": 3,
+                "indexs": 1,
+                "api": "douban_open.js"
+            },
+      
+            {
+                "key": "kuwo",
+                "name": "🎦多多丨酷我",
+                "type": 3,
+                "api": "kuwo_open.js"
+            },
+            
+            		
+            
+            {
+                "key": "mybl",
+                "name": "🏓多多丨哔哩",
+                "type": 3,
+                "api": "mybili_open.js"
+            },
+            {
+			    "key": "bili",
+				"name": "🏓多多丨B站",
+				"type": 3,
+				"api": "bili_open.js",
+				"ext": {"categories": "音乐#动画#电影#电视剧#番剧#综艺#影视#国创#娱乐#游戏#搞笑#单机游戏#沙雕动画#沙雕穿越#沙雕","cookie": "DedeUserID=690781341;DedeUserID__ckMd5=cabc96906269c5b6;;          "}
+			}, 				
+ 
+            
+            {
+                "key": "zjm",
+                "name": "🏓多多丨剧迷",
+                "type": 3,
+                "api": "zjm_open.js"
+            },				
+            	
+            
+           
+            {
+                "key": "qiqi5555",
+                "name": "🏓多多丨888",
+                "type": 3,
+                "api": "appysv2.js",
+                "ext": "https://www.ttmja.com/api.php/app/"
+            },
+             
+            {
+                "key": "555",
+                "name": "🏓多多丨555",
+                "type": 3,
+                "api": "appv2_bytecode.js",
+                "ext": "https://www.55kan7.top/api.php/app/"
+               }, 
+
+             {
+                "key": "9177",
+                "name": "🏓多多丨91",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://91jpzyw.com/api.php/provide/vod/"
+            },
+            {
+                "key": "3602",
+                "name": "🏓多多丨3602",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://360zyzz.com/api.php/provide/vod/"
+            },
+            {
+                "key": "bojuw1",
+                "name": "🏓多多丨播剧网",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.ysxq.cc/api.php/provide/vod/"
+            },
+            {
+                "key": "AcFuns2",
+                "name": "🏓多多丨AcFuns",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.acfuns.net/api.php/provide/vod/"
+            },
+            {
+                "key": "yingmao2",
+                "name": "🏓多多丨影猫",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://ymck.pro/api.php/provide/vod/"
+            },
+            {
+                "key": "zjb66",
+                "name": "🏓多多丨追剧吧",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://zjuba.vip/api.php/provide/vod/"
+            },
+            {
+                "key": "wjzy666",
+                "name": "🏓多多丨无尽资源1",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.wujinapi.me/api.php/provide/vod/"
+            },
+            {
+                "key": "yy77",
+                "name": "🏓多多丨鸭鸭1",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://cj2.yayazy.net/api.php/provide/vod/"
+            },
+            {
+                "key": "mogu11",
+                "name": "🏓多多丨蘑菇",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.5o5k.com/api.php/provide/vod/"
+            },
+            {
+                "key": "kuailong",
+                "name": "🏓多多丨快龙",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://lz.118318.xyz/api.php/provide/vod/"
+            },
+            {
+                "key": "kuailong55555",
+                "name": "🏓多多丨无尽2",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.wujinapi.com/api.php/provide/vod/"
+            },
+            {
+                "key": "kuailong7777",
+                "name": "🏓多多丨漫道2",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://www.mandao.site/api.php/provide/vod/"
+            },
+            {
+                "key": "bubo777",
+                "name": "🏓多多丨独播",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://caiji.dbzy.tv/api.php/provide/vod/"
+            },
+            {
+                "key": "yy7777",
+                "name": "🏓多多丨鸭鸭7",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://yayazy2.com/api.php/provide/vod/"
+            },
+            {
+                "key": "OK8888",
+                "name": "🏓多多丨OK2",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.okzyw.net/api.php/provide/vod/"
+            },
+            {
+                "key": "tudou111",
+                "name": "🏓多多丨土豆",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://learnpython.ggff.net/py_tudou"
+            },
+            {
+                "key": "淘片777",
+                "name": "🏓多多丨淘片2线",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://taopianapi.com/cjapi/mc/vod/json.html"
+            },
+            {
+                "key": "CCTV1",
+                "name": "🏓多多丨cctv1",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://zhangqun1818.serv00.net/cctv.php"
+            },
+            {
+                "key": "caiji000",
+                "name": "🏓多多丨采集大全2",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://jg.zhangqun66.com/cjjh.php"
+            },
+            {
+                "key": "zhibo99",
+                "name": "🏓多多丨直播99",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://zhangqun1818.serv00.net/zh/2242.php"
+            },
+            {
+                "key": "zhibo2211",
+                "name": "🏓多多丨直播222",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://jg.zhangqun66.com/zh/2241-1.php"
+            },
+            {
+                "key": "tvbox",
+                "name": "🏓多多丨tvbox",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://zhangqun1818.serv00.net/228_1.php"
+            },
+            {
+                "key": "克隆guazhi111",
+                "name": "🏓多多丨克隆",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://zhangqun66.xyz/klhj.php"
+            },
+            {
+                "key": "直播333",
+                "name": "🏓多多丨直播111",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://jg.zhangqun66.com/zh/2241-2.php"
+            },
+            
+            {
+                "key": "394",
+                "name": "🏓多多丨394",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.394tv.com/api.php/provide/vod/"
+            },
+            {
+                "key": "feifan8909099",
+                "name": "🏓多多丨非凡2",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://ffzy1.tv/api.php/provide/vod/from/ffm3u8/"
+            },
+           
+          
+           
+            {
+                "key": "bobo",
+                "name": "🏓多多丨bobo",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://150.109.94.44:1112/api.php/provide/vod/"
+            },
+            {
+                "key": "911",
+                "name": "🏓多多丨911",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://learnpython.ggff.net/911"
+            },
+            
+            {
+                "key": "51rrr",
+                "name": "🏓多多丨偶车 ",
+                "type": 3,
+                "api": "appysv2.js",
+                "ext": "https://learnpython.ggff.net/huoche"
+            },
+
+            {
+                "key": "inmi",
+                "name": "🏓多多丨影迷",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.inmi.app/api.php/provide/vod/"
+            },
+            {
+                "key": "mandao8",
+                "name": "🏓多多丨漫道",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.mandao.cc/api.php/provide/vod/"
+            },
+            {
+                "key": "laozhang",
+                "name": "🏓多多丨老张",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://zhangqun66.com/zh/2243.php"
+            },
+            
+            {
+                "key": "laozhang7777",
+                "name": "🏓多多丨旺旺3",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://zhangqun1818.serv00.net/ww.php"
+            },
+            {
+                "key": "dadi999",
+                "name": "🏓多多丨蛋蛋",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://ddmf.net/api.php/provide/vod/"
+            },
+            {
+                "key": "JIANPIAN",
+                "name": "🏓多多丨荐片",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://zhangqun1818.serv00.net/jianpian1.php"
+            },
+             {
+                "key": "JIANPIAN2",
+                "name": "🏓多多丨荐片2",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://zhangqun1818.serv00.net/jianpian.php"
+            },
+            {
+                "key": "aidan7788",
+                "name": "🏓多多丨艾丹",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://lovedan.net/api.php/provide/vod/"
+            },
+            {
+                "key": "caiji7777",
+                "name": "🏓多多丨采集",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://zhangqun66.xyz/cjjh.php"
+            },
+            
+            {
+                "key": "8880009",
+                "name": "🏓多多丨瀑布盘",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://dh.ha.cn/api.php/provide/vod/?ac=list"
+            },
+            
+            
+           
+           
+           
+            {
+                "key": "kankanju",
+                "name": "🏓多多丨看看剧",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://hhzyapi.com/api.php/provide/vod/at/json"
+            },
+           
+            {
+                "key": "IKUZY",
+                "name": "🏓多多丨IKU",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://ikzy1.com/api.php/provide/vod"
+            },
+           
+         
+            
+             {
+                "key": "CK112",
+                "name": "🏓多多丨CK资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://ckzy.me/api.php/provide/vod/"
+            },
+             
+           
+            {
+                "key": "aiqiyi111",
+                "name": "🏓多多丨爱奇艺资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://iqiyizyapi.com/api.php/provide/vod/"
+            },
+          
+             {
+                "key": "OKZY",
+                "name": "OK资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://okzyapi.com/api.php/provide/vod/"
+            },
+            
+     
+            {
+                                "key": "tianya1111",
+                                "name": "🏓多多丨天涯资源",
+                                "type": 3,
+                                "api": "caiji.js",
+                                "ext": "https://tyyszyapi.com/api.php/provide/vod/"
+            },
+
+    
+            {
+                "key":"appv2_open_xihauche",
+                "name":"4k_1影视[解析源][V2]",
+                "type":3,
+                "api":"appysv2.js",
+                "ext":"https://tx.xihauche.cn/api.php/app/"
+            },
+           
+            
+
+            {
+                "key":"appv2_open_ttmja",
+                "name":"天天影院[采集源][V2]",
+                "type":3,
+                "api":"appysv2.js",
+                "ext":"https://www.ttmja.com/api.php/app/"
+            },
+           
+             
+            
+            {
+                "key":"appv2_open_haituu",
+                "name":"海兔影视[采集源][V2]",
+                "type":3,
+                "api":"appysv2.js",
+                "ext":"https://www.haituu.tv/api.php/v1.vod"
+            },
+             
+            {
+                "key":"duanyou",
+                "name":"段友[采集源][V2]",
+                "type":3,
+                "api":"appysv2.js",
+                "ext":"https://shangjihuoke.com/api.php/app/"
+            },
+            {
+
+         "key": "天翼资源",
+         "name": "🐾熊猫丨天翼【☯️】",
+         "type": 3,
+         "api": "caiji.js",
+         "ext": "https://www.911ysw.top/tianyi.php/provide/vod/"
+    },
+   
+             {
+                "key": "doubanzy",
+                "name": "豆瓣资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://caiji.dbzy.tv/api.php/provide/vod/"
+            },
+             {
+                "key": "maoyanzy",
+                "name": "猫眼资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.maoyanapi.top/api.php/provide/vod/"
+            },
+            {
+                "key": "moviezy",
+                "name": "电影天堂云",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://caiji.dyttzyapi.com/api.php/provide/vod/"
+            },
+            
+            
+   
+            {
+                "key": "youzhi111",
+                "name": "优质资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.yzzy-api.com/inc/apijson.php"
+            },
+            
+            
+       
+   
+     	
+            
+             {
+                "key": "sybotv",
+                "name": "🏓多多丨苏伯",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://subocaiji.com/api.php/provide/vod/from/subm3u8/"
+            },
+             {
+                "key": "jisu",
+                "name": "🏓多多丨极速",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://jszyapi.com/api.php/provide/vod/from/jsm3u8/"
+            },	
+             {
+                "key": "tianlong1",
+                "name": "🏓多多丨doudoui",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://caiji.dbzy5.com/api.php/provide/vod/"
+            },							
+            
+            
+            	
+            {
+                "key": "xinlang",
+                "name": "🏓多多丨新浪",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8"
+            },
+            {
+                "key": "bdzy",
+                "name": "🏓多多丨百度",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.apibdzy.com/api.php/provide/vod/from/dbm3u8/"
+            },
+           
+            {
+                "key": "bfzy",
+                "name": "🏓多多丨暴风",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://bfzyapi.com/api.php/provide/vod/"
+            },		
+            {
+                "key": "feifan",
+                "name": "🏓多多丨非凡",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.ffzyapi.com/api.php/provide/vod/from/ffm3u8/"
+            },
+            
+             {
+                "key": "jiuyue233",
+                "name": "🏓多多丨IKU111",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://ikunzy.vip/api.php/provide/vod/from/ikm3u8/"
+            },					
+            {
+                "key": "guangsuapi",
+                "name": "🏓多多丨光速",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://api.guangsuapi.com/api.php/provide/vod/from/gsm3u8/"
+            },			
+            {
+                "key": "feisu",
+                "name": "🏓多多丨飞速",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.feisuzyapi.com/api.php/provide/vod/from/fsm3u8/"
+            },		
+            {
+                "key": "ikun",
+                "name": "🏓多多丨爱坤",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://ikunzyapi.com/api.php/provide/vod"
+            },
+             
+            {
+                "key": "jinying",
+                "name": "🏓多多丨金鹰",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://jinyingzy.com/provide/vod/from/jinyingm3u8/"
+            },
+         
+            {
+                "key": "modou444",
+                "name": "🏓多多丨魔都资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.mdzyapi.com/api.php/provide/vod/"
+            },
+            {
+                "key": "kuaiche",
+                "name": "🏓多多丨快车",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://caiji.kuaichezy.org/api.php/provide/vod/"
+            },
+            {
+                "key": "tiankong6",
+                "name": "🏓多多丨天空",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.tiankongapi.com/api.php/provide/vod/at/json"
+            },
+            {
+                "key": "taopianapi",
+                "name": "🏓多多丨淘片",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://taopianapi.com/cjapi/mc10/vod/json.html"
+            },
+            
+      
+      {
+        "key": "piaoling",
+        "name": "📛挺好TH | 飘零",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://p2100.net/api.php/provide/vod/"
+      },
+ 
+      {
+        "key": "49i",
+        "name": "49| 业余♻️",
+        "type": 3,
+        "api": "appysv2.js",
+        "ext": "https://49zyw.com/api.php/provide/vod/at/json"
+       },
+      
+     
+      
+      {
+        "key": "lzys5",
+        "name": "量子 | 业余♻️",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "http://cj.lziapi.com/api.php/provide/vod/"
+      },
+      
+    {
+                "key": "1080333",
+                "name": "📺乐享汇fans丨优质1080p",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.yzzy-api.com/inc/api_mac10.php"
+            },
+  
+            {
+                "key": "SONY",
+                "name": "官方[索尼]",
+                "api": "caiji.js",
+                "type": 3,
+                "ext": "https://suoniapi.com/api.php/provide/vod/from/snm3u8/"
+            },
+            
+
+         
+       {
+        "key": "360l",
+        "name": "360| 业余♻️",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://360zy.com/api.php/provide/vod/"
+      },
+          
+            
+
+           
+            {
+                "key": "haoqi",
+                "name": "影视[豪华]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://hhzyapi.com/api.php/provide/vod"
+            },
+            
+            {
+                "key": "subo",
+                "name": "影视[速博]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://subocaiji.com/api.php/provide/vod"
+            },
+            {
+                "key": "huyaapi",
+                "name": "影视[虎牙]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://www.huyaapi.com/api.php/provide/vod/at/json"
+            },
+            
+            
+
+             {
+                "key": "CK资源",
+                "name": "CK资源",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://ckzy.me/api.php/provide/vod/"
+            },
+            
+   
+             
+     
+          
+            {
+                "key": "yaya3",
+                "name": "影视[鸭鸭]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://cj.yayazy.net/api.php/provide/vod/"
+            },
+            {
+                "key": "niuniu",
+                "name": "影视[牛牛]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.niuniuzy.me/api.php/provide/vod/"
+            },
+              
+          
+            {
+                "key": "senan123",
+                "name": "影视[123]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://gctf.tfdh.top/api.php/provide/vod/"
+            },
+
+            
+             
+            {
+
+                "key": "youku558",
+                "name": "影视[优酷]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.ukuapi88.com/api.php/provide/vod/"
+            },
+            
+
+            {
+                "key": "hhzyapi",
+                "name": "影视[火狐]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://hhzyapi.com/api.php/provide/vod/at/json"
+            },
+           
+            
+             {
+                "key": "wwzy11",
+                "name": "影视[旺旺]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.wwzy.tv/api.php/provide/vod/"
+            },
+            
+            
+            {
+                "key": "sdzyapi",
+                "name": "影视[闪电]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "http://sdzyapi.com/api.php/provide/vod/at/json"
+            },
+           
+           
+            {
+                "key": "hhzyapi",
+                "name": "影视[火狐]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://hhzyapi.com/api.php/provide/vod/at/json"
+            },
+             {
+                "key": "ryzy11",
+                "name": "影视[如意]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://cj.rycjapi.com/api.php/provide/vod/"
+            },
+           
+            {
+                "key": "pgfenwe078",
+                "name": "影视[四圈]",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://pg.fenwe078.cf/api.php/provide/vod/at/json"
+            },
+            
+        
+          
+
+       {  
+        "key": "yinghua",
+        "name": "樱花动漫 | 业余♻️",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://m3u8.apiyhzy.com/api.php/provide/vod/"
+      },
+     
+ 
+    {
+        "key": "wujin",
+        "name": "无尽影视 | 业余♻️",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://api.wujinapi.me/api.php/provide/vod/"
+      }, 
+     
+     
+    {
+        "key": "tk",
+        "name": "虎牙资源 | 业余♻️",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://www.huyaapi.com/api.php/provide/vod/"
+      },
+       
+        
+       {    
+        "key": "SD",
+        "name": "闪电资源 | 业余♻️",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "http://sdzyapi.com/api.php/provide/vod/"
+      }, 
+   
+       
+       {
+                "key": "zuidaeee",
+                "name": "🏓多多丨最大",
+                "type": 3,
+                "api": "caiji.js",
+                "ext": "https://api.zuidapi.com/api.php/provide/vod/"
+            },
+
+      
+         
+            
+               
+    
+       
+
+       
+      {
+        "key": "shenmajuhe",
+        "name": "🐾 神马 | 千软汇🎯",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://img.smdyw.top/api.php/provide/vod/"
+   },
+   {
+        "key": "wolong3",
+        "name": "🐾 卧龙 | 千软汇🎯",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://collect.wolongzy.cc/api.php/provide/vod/"
+   },	   
+   {
+        "key": "hongniu",
+        "name": "🐾 红牛 | 千软汇🎯",
+        "type": 3,
+        "api": "caiji.js",
+        "ext": "https://www.hongniuzy2.com/api.php/provide/vod/from/hnm3u8/"
+   },	
+          
+            {
+                "key": "ubestkid",
+                "name": "🏓多多丨贝乐虎",
+                "type": 3,
+                "api": "ubestkid_open.js"
+            },
+            {
+                "key": "tuxiaobei",
+                "name": "🏓多多丨兔小贝",
+                "type": 3,
+                "api": "tuxiaobei_open.js"
+            },
+            {
+                "key": "boosj",
+                "name": "🏓多多丨童趣",
+                "type": 3,
+                "api": "boosj_open.js"
+            },
+            {
+                "key": "kuqimv",
+                "name": "🏓多多丨酷奇",
+                "type": 3,
+                "api": "kuqimv_open.js"
+            }
+           
+          
+             
+          
+           
+        ]
+    },
+    "read": {
+        "sites": [
+            {
+                "key": "bookan",
+                "name": "🏓多多丨博看",
+                "type": 10,
+                "api": "bookan_open.js"
+            },
+            {
+                "key": "kuwosong",
+                "name": "🏓多多丨酷我",
+                "type": 10,
+                "api": "kuwosong.js"
+            },
+            {
+                "key": "18",
+                "name": "18",
+                "type": 3,
+                "api": "book18_open.js"
+            },
+           
+              
+             {
+                "key": "zz123",
+                "name": "🏓多多丨zz123",
+                "type": 10,
+                "api": "zz123_open.js"
+            },       
+            {
+                "key": "lbgs",
+                "name": "🏓多多丨老白",
+                "type": 10,
+                "api": "lbgs_open.js"
+            },
+            {
+                "key": "shuyinfm",
+                "name": "🏓多多丨书音FM",
+                "type": 10,
+                "api": "shuyinfm_bytecode.js"
+            },
+             
+            {
+                "key": "230ts_book",
+                "name": "🏓多多丨爱尚",
+                "type": 10,
+                "api": "230ts_book_open.js"
+            },
+             {
+                "key": "ting13",
+                "name": "🏓多多丨13听书",
+                "type": 10,
+                "api": "ting13_bytecode.js"
+            },
+            {
+                "key": "13bqg",
+                "name": "🏓多多丨笔趣阁【🎧",
+                "type": 10,
+                "api": "13bqg_open.js"
+            },
+            {
+                "key": "dj0898_book",
+                "name": "🏓多多丨DJ世纪",
+                "type": 10,
+                "api": "dj0898_book_open.js"
+            }
+        ]
+    },
+    "comic": {
+      "sites": [
+           {
+                "key": "bengou_open",
+                "name": "笨狗漫画",
+                "type": 3,
+                "api": "bengou_open.js"
+            },
+            {
+                "key": "baozimh",
+                "name": "包子漫画",
+                "type": 3,
+                "api": "baozimh_open.js"
+        },
+         
+             {
+                "key": "acgwd_open",
+                "name": "acgwd漫画",
+                "type": 3,
+                "api": "acgwd_open.js"
+            },            
+           
+            {
+                "key": "mkz_open",
+                "name": "漫客栈",
+                "type": 3,
+                "api": "mkz_open.js"
+        },
+         {
+                "key": "fengche",
+                "name": "📓 风车漫画",
+                "type": 20,
+                "api": "fengche_open.js"
+            },
+           
+           
+             
+               
+            
+                
+          
+          {
+              "key": "copymanga",
+              "name": "拷贝漫画",
+              "type": 20,
+              "api": "copymanga_open.js"
+          }
+      ]
+  },
+    "pan": {
+        "sites": [
+            {
+                "key": "alist",
+                "name": "Alist",
+                "type": 40,
+                "api": "alist_open.js",
+                "ext": [
+                    {
+                        "name": "🙋丫仙女",
+                        "server": "http://alist.xiaoya.pro/",
+                        "startPage": "/",
+                        "showAll": false,
+                        "search": true,
+                        "headers": {
+                            "Authorization": ""
+                        },
+                        "params": {
+                            "/abc": {
+                                "password": "123"
+                            },
+                            "/abc/abc": {
+                                "password": "123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "🥮 罗汉",
+                        "server": "https://lala-ofbip.run.goorm.site/"
+                    },
+                    {
+                        "name": "🥮 福利",
+                        "server": "http://69.161.221.160:5244/"
+                    },
+                    {
+                        "name": "🥮 合集",
+                        "server": "http://www.jczyl.top:5244/"
+                    },
+                    {
+                        "name": "🥮 东哥",
+                        "server": "http://101.34.67.237:5244/"
+                    },
+                    {
+                        "name": "🥮 美云",
+                        "server": "https://h.dfjx.ltd/"
+                    },
+                    {
+                        "name": "🥮 小新",
+                        "server": "https://pan.cdnxin.top/"
+                    },
+                    {
+                        "name": "🥮 白云",
+                        "server": "http://breadmyth.asuscomm.com:22222/"
+                    },
+                    {
+                        "name": "🥮 瑶瑶",
+                        "server": "https://lyly.run.goorm.io/"
+                    },
+                    {
+                        "name": "🥮 潇洒",
+                        "server": "https://alist.azad.asia/"
+                    },
+                    {
+                        "name": "🥮 鹏程",
+                        "server": "https://pan.pengcheng.team/"
+                    },
+                    {
+                        "name": "🥮 浅唱",
+                        "server": "http://vtok.pp.ua/"
+                    },
+                    {
+                        "name": "🥮 触光",
+                        "server": "https://pan.ichuguang.com"
+                    },
+                    {
+                        "name": "🥮 星梦",
+                        "server": "https://pan.bashroot.top"
+                    },
+                    {
+                        "name": "🥮 弱水",
+                        "server": "http://shicheng.wang:555/"
+                    },
+                    {
+                        "name": "🥮 神器",
+                        "server": "https://alist.ygxz.xyz/"
+                    },
+ {"name":"🟢个人站1","server":"http://223.166.240.80:5244/"},
+{"name":"🟢个人站2","server":"http://223.166.240.214:5244/"},
+{"name":"🟢个人站3","server":"http://223.166.201.129:5244/"},
+{"name":"🟢个人站4","server":"http://223.166.245.122:5244/"},
+{"name":"🟢个人站5","server":"http://223.166.31.107:5244/"},
+                    {
+                        "name": "🥮 资源",
+                        "server": "https://pan.ecve.cn/"
+                    },
+                    {
+                        "name": "🥮 雨呢",
+                        "server": "https://pan.clun.top/"
+                    },
+                    {
+                        "name": "🥮 悦享",
+                        "server": "https://nics.eu.org/"
+                    },
+                    {
+                        "name": "🥮 分享",
+                        "server": "https://ofoo.ml/"
+                    },
+                    {
+                        "name": "🥮 PRO",
+                        "server": "https://alist.prpr.run/"
+                    },
+                    {
+                        "name": "🥮 小陈",
+                        "server": "https://ypan.cc/"
+                    },
+                    {
+                        "name": "🥮 七米",
+                        "server": "https://al.chirmyram.com"
+                    },
+                    {
+                        "name": "🥮 九帝",
+                        "server": "https://alist.shenzjd.com"
+                    },
+                    {
+                        "name": "🥮 白雪",
+                        "server": "https://pan.jlbx.xyz"
+                    },
+                    {
+                        "name": "🥮 星梦",
+                        "server": "https://pan.bashroot.top"
+                    },
+                    {
+                        "name": "🥮 讯维",
+                        "server": "https://pan.xwbeta.com"
+                    },
+                    {
+                        "name": "公众号：多多影音",
+                        "server": "https://pan.xwbeta.com"
+                    }
+                ]
+            }
+        ]
+    }
+}
