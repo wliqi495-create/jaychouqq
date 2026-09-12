@@ -1,0 +1,17 @@
+[
+{"name":"🥩高清无码","url":"https://d.kstore.dev/download/11759/18%EF%B9%A2.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🌀天美传媒","url":"https://tvv.tw/https://raw.githubusercontent.com/fish2018/lib/refs/heads/main/txt/天美传媒816.txt&&&http://api.btstu.cn/sjbz/"},
+{"name":"🌃果冻传媒","url":"https://tvv.tw/https://raw.githubusercontent.com/fish2018/lib/refs/heads/main/txt/果冻传媒816.txt&&&/http://api.btstu.cn/sjbz/"},
+{"name":"🌃麻豆传媒","url":"https://tvv.tw/https://raw.githubusercontent.com/fish2018/lib/refs/heads/main/txt/麻豆传媒816.txt&&&http://api.btstu.cn/sjbz/"},{"name":"🌃星空传媒","url":"https://tvv.tw/https://raw.githubusercontent.com/fish2018/lib/refs/heads/main/txt/星空传媒816.txt&&&http://api.btstu.cn/sjbz/"},
+{"name":"🌃精东传媒","url":"https://tvv.tw/https://raw.githubusercontent.com/fish2018/lib/refs/heads/main/txt/精东影业816.txt&&&http://api.btstu.cn/sjbz/"},{"name":"🌃国产影视","url":"https://tvv.tw/https://raw.githubusercontent.com/fish2018/lib/refs/heads/main/txt/国产传媒.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘日本直播👿","url":"https://web.utako.moe/jp.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘国外直播👿","url":"https://proxy.api.030101.xyz/iptv-org.github.io/iptv/index.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘国际直播👿","url":"http://tv123.vvvv.ee/tv.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘18+👿","url":"https://gitee.com/sji820/des/raw/master/0.jpg&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘jackTV👿","url":"https://php.946985.filegear-sg.me/jackTV.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘易发👿","url":"https://down.nigx.cn/raw.githubusercontent.com/fafa002/yf2025/refs/heads/main/yiyifafa.txt&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘Jsnzkpg👿","url":"https://gh-proxy.org/https://raw.githubusercontent.com/Jsnzkpg/Jsnzkpg/Jsnzkpg/Jsnzkpg1.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘韩国18👿","url":"https://gh-proxy.com/https://raw.githubusercontent.com/wliqi495-create/jaychouqq/refs/heads/main/hgll1.m3u&&&http://api.btstu.cn/sjbz/"},
+{"name":"🥘韩国女团","url":"https://gist.githubusercontent.com/yuanwangokk-1/a661dd0e88466aa22f2a7c1fb375635e/raw/8708d9947be1c64c52bb1610a30aaa1b595848c9/韩国女团直播.m3u&&&http://api.btstu.cn/sjbz/"}
+
+]
