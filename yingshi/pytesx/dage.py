@@ -114,10 +114,18 @@ class Spider(BaseSpider):
             if not u:
                 return
             u = u.replace('\\/', '/').replace('\\u0026', '&').strip()
-            u = re.sub(r'[\x00-\x1f]', '', u)
+            u = re.sub(r'[\x00-\x1f\x7f]', '', u)
+            # 损坏修复 index.o?u8 → index.m3u8
+            # 站点混淆：? 实为 4
+            u = u.replace('?', '4')
+            u = re.sub(r'index\.o.u8', 'index.m3u8', u, flags=re.I)
+            u = re.sub(r'index\.omu8', 'index.m3u8', u, flags=re.I)
+            u = re.sub(r'index\.osu8', 'index.m3u8', u, flags=re.I)
+            u = re.sub(r'\.o.u8', '.m3u8', u, flags=re.I)
+            u = re.sub(r'[^\x20-\x7e]', '', u)
             if not u.startswith('http') or u in seen:
                 return
-            if '.m3u8' not in u and 'mplay.' not in u:
+            if not re.search(r'\.m3u8|\.mp4|mplay\.|/hls/', u, re.I):
                 return
             seen.add(u)
             urls.append(u)
@@ -187,11 +195,25 @@ class Spider(BaseSpider):
         items = []
         if isinstance(data, dict):
             items = data.get('items') or data.get('list') or data.get('vod') or []
+        # 正则兜底（解码 JSON 常因坏字节失败）
         if not items and raw:
-            # 正则抽 items 里的 id/title/img
-            text = raw.decode('latin-1', 'replace')
-            for m in re.finditer(r'"id"\s*:\s*(\d+).{0,80}?"(?:title|vod_name)"\s*:\s*"((?:[^"\\]|\\.)*)"', text):
-                items.append({'id': m.group(1), 'title': m.group(2)})
+            blob = raw.decode('latin-1', 'replace')
+            for m in re.finditer(
+                r'"vod_id"\s*:\s*(\d+)\s*,\s*"cid"\s*:\s*\d+\s*,\s*"title"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,\s*"img"\s*:\s*"((?:[^"\\]|\\.)*)"',
+                blob,
+            ):
+                title = m.group(2)
+                try:
+                    title = title.encode('latin-1', 'replace').decode('unicode_escape', 'replace')
+                except Exception:
+                    title = re.sub(r'\\u([0-9a-fA-F]{4})', lambda x: chr(int(x.group(1), 16)), title)
+                title = re.sub(r'[\x00-\x1f\x7f]', '', title)
+                img = m.group(3).replace('\\/', '/')
+                img = re.sub(r'[\x00-\x1f\x7f]', '', img)
+                items.append({'vod_id': m.group(1), 'title': title, 'img': img if img.startswith('http') else ''})
+            if not items:
+                for m in re.finditer(r'"vod_id"\s*:\s*(\d+)', blob):
+                    items.append({'vod_id': m.group(1), 'title': '视频' + m.group(1)})
         return self._parse_items(items)
 
     def homeContent(self, filter):

@@ -269,9 +269,10 @@ class Spider(BaseSpider):
             base = HOST + '/'
         elif tid.startswith('search:'):
             kw = urllib.parse.quote(tid[7:])
-            base = HOST + '/a片?search=' + kw
+            base = HOST + '/' + urllib.parse.quote('a片') + '?search=' + kw
         else:
-            base = HOST + '/' + tid.lstrip('/')
+            parts = [urllib.parse.quote(p) for p in tid.lstrip('/').split('/') if p]
+            base = HOST + '/' + '/'.join(parts)
         if page <= 1:
             return base
         sep = '&' if '?' in base else '?'

@@ -139,19 +139,8 @@ class Spider(BaseSpider):
         pic = ''
         m = re.search(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)["\']', html, re.I)
         if m: pic = self._abs(m.group(1))
-        plays, seen = [], set()
-        m = re.search(r"var\s+stream\s*=\s*['\"]([^'\"]+)['\"]", html)
-        if m:
-            u = m.group(1).replace('&amp;', '&')
-            if u and 'preview' not in u.lower():
-                seen.add(u)
-                plays.append(('播放', u))
-        for u in re.findall(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', html):
-            u = u.replace('&amp;', '&')
-            if u in seen or 'preview' in u.lower() or u.endswith('.jpg'): continue
-            seen.add(u)
-            plays.append(('线路%d' % (len(plays)+1), u))
-        if not plays: plays = [('正片', page_url)]
+        # m3u8 带时间戳，detail 不固化，播放时现解
+        plays = [('正片', page_url)]
         play_url = '#'.join(['%s$%s' % (n, u) for n, u in plays])
         result['list'] = [{
             'vod_id': page_url, 'vod_name': name or '591AV', 'vod_pic': pic,
@@ -171,12 +160,17 @@ class Spider(BaseSpider):
         return {'list': videos, 'page': int(pg or 1), 'pagecount': 1, 'limit': 24, 'total': len(videos)}
 
     def playerContent(self, flag, id, vipFlags):
-        header = {'User-Agent': self.ua, 'Referer': self.host + '/'}
         play = str(id or '').strip()
+        if not play.startswith('http'):
+            play = self._abs(play)
         if play.startswith('http') and re.search(r'\.(m3u8|mp4)(\?|$)', play, re.I):
+            header = {'User-Agent': self.ua, 'Referer': self.host + '/', 'Origin': self.host, 'Accept': '*/*', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive'}
             return {'parse': 0, 'url': play, 'header': header}
-        if not play.startswith('http'): play = self._abs(play)
+        # 页面地址 → 现解 stream（避免时间戳过期）
+        if not play.endswith('/') and '/v/' in play:
+            play = play + '/'
         html = self._get(play, referer=self.host + '/pp1/')
+        header = {'User-Agent': self.ua, 'Referer': play, 'Origin': self.host, 'Accept': '*/*', 'Accept-Language': 'en-US,en;q=0.9', 'Connection': 'keep-alive'}
         m = re.search(r"var\s+stream\s*=\s*['\"]([^'\"]+)['\"]", html or '')
         if m:
             return {'parse': 0, 'url': m.group(1).replace('&amp;', '&'), 'header': header}
