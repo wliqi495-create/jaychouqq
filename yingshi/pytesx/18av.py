@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 18AV https://18av01.cc/zh/
-# 播放: mvarr 编码 id → decrypto + AES → play.php → m3u8
+# 播放: mvarr 编码 id → decrypto(radix+xor) + AES-CBC → play.php → m3u8 直出
 import re
 import json
 import sys
@@ -36,10 +36,10 @@ class Spider(BaseSpider):
             'AppleWebKit/537.36 (KHTML, like Gecko) '
             'Chrome/131.0.0.0 Safari/537.36'
         )
-        # AES 参数（页面 argdeqweqweqwe / hdddedg252）
-        self.aes_key = b'52ae66cd1c50b2bf'
-        self.aes_iv = b'cd549eeedcb25486'
-        self.hcdeed = 19   # radix / sep offset
+        # 默认 AES（页面会覆盖）
+        self.aes_key = b'f2de1cc5a09e548a'
+        self.aes_iv = b'14799105d5ff0474'
+        self.hcdeed = 21   # 分割符 radix → sep=chr(radix+97)='v'
         self.hadeed = 26   # xor
         self.channels = {
             'chinese': {'name': '中文字幕', 'path': '/zh/chinese_random/all/index.html'},
@@ -54,6 +54,11 @@ class Spider(BaseSpider):
             'dt': {'name': '国产自拍', 'path': '/zh/dt_random/all/index.html'},
             'news': {'name': '每日更新', 'path': '/zh/content_news/all/index.html'},
         }
+        self.name_to_id = {}
+        for _k, _v in self.channels.items():
+            self.name_to_id[_k] = _k
+            self.name_to_id[_v['name']] = _k
+
 
     def getName(self):
         return '18AV'
@@ -79,14 +84,15 @@ class Spider(BaseSpider):
         try:
             headers = self._headers(referer, accept)
             if requests is None:
-                import urllib.request, ssl
+                import urllib.request
+                import ssl
                 ctx = ssl.create_default_context()
                 ctx.check_hostname = False
                 ctx.verify_mode = ssl.CERT_NONE
                 req = urllib.request.Request(url, headers=headers)
-                with urllib.request.urlopen(req, timeout=18, context=ctx) as resp:
+                with urllib.request.urlopen(req, timeout=20, context=ctx) as resp:
                     return resp.read().decode('utf-8', 'ignore')
-            r = requests.get(url, headers=headers, timeout=18, verify=False)
+            r = requests.get(url, headers=headers, timeout=20, verify=False)
             r.encoding = 'utf-8'
             return r.text if r.status_code == 200 else ''
         except Exception as e:
@@ -96,7 +102,7 @@ class Spider(BaseSpider):
     def _abs(self, u):
         if not u:
             return ''
-        u = u.strip().replace('\\/', '/')
+        u = u.strip().replace('\\/', '/').replace('&amp;', '&')
         if u.startswith('//'):
             return 'https:' + u
         if u.startswith('/'):
@@ -105,12 +111,37 @@ class Spider(BaseSpider):
             return self.host + '/' + u
         return u
 
+    def _refresh_crypto(self, html):
+        """从页面刷新 AES key/iv 和 radix/xor"""
+        m = re.search(r"argdeqweqweqwe\s*=\s*'([0-9a-fA-F]{16})'", html)
+        if m:
+            self.aes_key = m.group(1).encode('utf-8')
+        m = re.search(r"hdddedg252\s*=\s*'([0-9a-fA-F]{16})'", html)
+        if m:
+            self.aes_iv = m.group(1).encode('utf-8')
+        # 有时 key/iv 变量名对调
+        m = re.search(r"var\s+hdddedd252\s*=\s*'([0-9a-fA-F]{16})'", html)
+        if m and not re.search(r"argdeqweqweqwe\s*=\s*'([0-9a-fA-F]{16})'", html):
+            self.aes_key = m.group(1).encode('utf-8')
+        m = re.search(r'hadeedg252\s*=\s*(\d+)', html)
+        if m:
+            self.hadeed = int(m.group(1))
+        m = re.search(r'hcdeedg252\s*=\s*(\d+)', html)
+        if m:
+            self.hcdeed = int(m.group(1))
+
     def _decrypto(self, g):
-        """页面 decrypto：radix=hcdeed 分割 + xor hadeed"""
+        """radix 分割 + xor → 明文(base64)"""
         if not g:
             return ''
-        radix = self.hcdeed if self.hcdeed <= 25 else (self.hcdeed % 25)
-        sep = chr(radix + 97)
+        radix = self.hcdeed
+        if radix < 2:
+            radix = 21
+        # sep = chr(radix + 97)，radix=21 → 'v'
+        if radix <= 25:
+            sep = chr(radix + 97)
+        else:
+            sep = chr((radix % 25) + 97)
         parts = g.split(sep)
         out = []
         for p in parts:
@@ -118,7 +149,8 @@ class Spider(BaseSpider):
                 continue
             try:
                 k = int(p, radix) ^ self.hadeed
-                out.append(chr(k))
+                if 0 <= k <= 0x10FFFF:
+                    out.append(chr(k))
             except Exception:
                 continue
         return ''.join(out)
@@ -127,7 +159,8 @@ class Spider(BaseSpider):
         if not HAS_CRYPTO or not b64text:
             return ''
         try:
-            raw = base64.b64decode(b64text)
+            pad_len = (-len(b64text)) % 4
+            raw = base64.b64decode(b64text + ('=' * pad_len))
             cipher = Cipher(algorithms.AES(self.aes_key), modes.CBC(self.aes_iv))
             dec = cipher.decryptor()
             pt = dec.update(raw) + dec.finalize()
@@ -143,6 +176,8 @@ class Spider(BaseSpider):
 
     def _decode_play_id(self, enc):
         step1 = self._decrypto(enc)
+        if not step1:
+            return ''
         return self._aes_decrypt(step1)
 
     def _parse_list(self, html):
@@ -150,7 +185,7 @@ class Spider(BaseSpider):
         if not html:
             return videos
         for m in re.finditer(
-            r'href="((?:https?://(?:www\.)?18av01\.cc)?(/zh/\w+_content/\d+/[^"]+\.html))"',
+            r'href="((?:https?://(?:www\.)?18av01\.cc)?(/zh/[\w-]+_content/\d+/[^"]+\.html))"',
             html, re.I
         ):
             full = self._abs(m.group(1) if m.group(1).startswith('http') else m.group(2))
@@ -163,7 +198,6 @@ class Spider(BaseSpider):
             if tm:
                 title = tm.group(1).strip()
             if not title:
-                # 从 URL 取番号
                 cm = re.search(r'/([^/]+)\.html', full)
                 title = cm.group(1) if cm else '18AV'
             pic = ''
@@ -187,6 +221,41 @@ class Spider(BaseSpider):
             })
         return videos
 
+    def _m3u8_from_play_page(self, play_url, referer=''):
+        """拉取 play.php，提取 videoSources 里的 m3u8"""
+        html = self._get(play_url, referer=referer or (self.host + self.base + '/'))
+        if not html:
+            return []
+        urls = []
+        seen = set()
+        # videoSources: {src: '//....m3u8', type:..., size: 720}
+        for m in re.finditer(
+            r"\{src:\s*['\"]([^'\"]+\.m3u8[^'\"]*)['\"][^}]*size:\s*(\d+)",
+            html, re.I
+        ):
+            u = self._abs(m.group(1))
+            if u not in seen:
+                seen.add(u)
+                urls.append((m.group(2) + 'p', u))
+        if not urls:
+            for m in re.finditer(r"src:\s*['\"]([^'\"]+\.m3u8[^'\"]*)['\"]", html, re.I):
+                u = self._abs(m.group(1))
+                if u not in seen:
+                    seen.add(u)
+                    urls.append(('HLS', u))
+        if not urls:
+            for u in re.findall(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', html):
+                u = self._abs(u)
+                if u not in seen:
+                    seen.add(u)
+                    urls.append(('HLS', u))
+            for u in re.findall(r'//[^\s"\'<>]+\.m3u8[^\s"\'<>]*', html):
+                u = self._abs(u)
+                if u not in seen:
+                    seen.add(u)
+                    urls.append(('HLS', u))
+        return urls
+
     def _extract_plays(self, html, page_url=''):
         plays, seen = [], set()
         if not html:
@@ -198,49 +267,40 @@ class Spider(BaseSpider):
             seen.add(u)
             plays.append((label, u))
 
-        # 从页面变量刷新 AES 参数
-        m = re.search(r"argdeqweqweqwe\s*=\s*'([0-9a-f]+)'", html)
-        if m:
-            self.aes_key = m.group(1).encode('utf-8')
-        m = re.search(r"hdddedg252\s*=\s*'([0-9a-f]+)'", html)
-        if m:
-            self.aes_iv = m.group(1).encode('utf-8')
-        m = re.search(r'hadeedg252\s*=\s*(\d+)', html)
-        if m:
-            self.hadeed = int(m.group(1))
-        m = re.search(r'hcdeedg252\s*=\s*(\d+)', html)
-        if m:
-            self.hcdeed = int(m.group(1))
+        self._refresh_crypto(html)
 
-        # mvarr 条目: [iframeId, encId, prefixHtml, playPhpBase, suffix, ...]
+        # mvarr['10_1']=[['iframeId','encId','...','//host/js/player/play.php?numresolution=1080&id=','', '...'],]
         for m in re.finditer(
-            r"mvarr\['(\d+_\d+)'\]\s*=\s*\[\['([^']+)'\s*,\s*'([0-9a-z]+(?:t[0-9a-z]+)+)'\s*,\s*'[^']*'\s*,\s*'([^']*play\.php\?numresolution=\d+&id=)'",
+            r"mvarr\['(\d+_\d+)'\]\s*=\s*\[\['([^']+)'\s*,\s*'([0-9a-z]+)'\s*,\s*'[^']*'\s*,\s*'([^']*play\.php\?numresolution=\d+&id=)'",
             html, re.I
         ):
-            label_key, _fid, enc_id, play_base = m.group(1), m.group(2), m.group(3), m.group(4)
+            label_key, enc_id, play_base = m.group(1), m.group(3), m.group(4)
             decoded = self._decode_play_id(enc_id)
             if not decoded:
+                print('decode fail', enc_id[:40])
                 continue
             play_page = self._abs(play_base + decoded)
-            # 拉取 play.php 取 m3u8
-            phtml = self._get(play_page, referer=page_url or (self.host + self.base + '/'))
-            found = False
-            if phtml:
-                for u in re.findall(r'(?:src|file|url)\s*[:=]\s*[\'"]([^\'"]+\.m3u8[^\'"]*)', phtml, re.I):
-                    add('线路%s' % label_key.split('_')[0], self._abs(u))
-                    found = True
-                if not found:
-                    for u in re.findall(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', phtml):
-                        add('线路%s' % label_key.split('_')[0], u)
-                        found = True
-            if not found:
-                add('播放页%s' % label_key, play_page)
+            m3u8s = self._m3u8_from_play_page(play_page, page_url)
+            if m3u8s:
+                for lab, u in m3u8s:
+                    add('%s-%s' % (label_key.split('_')[0], lab), u)
+            else:
+                # 仍返回 play.php，playerContent 再抽
+                add('线路%s' % label_key.split('_')[0], play_page)
 
         # 兜底直链
-        for u in re.findall(r'https?://[^\s"\'<>]+\.(?:m3u8|mp4)[^\s"\'<>]*', html):
-            if 'preview' not in u.lower() and 'gifb.eemmhh' not in u:
-                add('直链', u)
+        for u in re.findall(r'(?:https?:)?//[^\s"\'<>]+\.(?:m3u8|mp4)[^\s"\'<>]*', html):
+            if 'preview' not in u.lower() and 'gifb' not in u:
+                add('直链', self._abs(u))
         return plays
+
+    def _resolve_tid(self, tid):
+        s = str(tid or 'chinese').strip()
+        if s in self.channels:
+            return s
+        if getattr(self, 'name_to_id', None) and s in self.name_to_id:
+            return self.name_to_id[s]
+        return 'chinese'
 
     def homeContent(self, filter):
         classes = [{'type_id': k, 'type_name': v['name']} for k, v in self.channels.items()]
@@ -252,23 +312,15 @@ class Spider(BaseSpider):
 
     def categoryContent(self, tid, pg, filter, extend):
         pg = int(pg or 1)
-        tid = str(tid or 'chinese')
+        tid = self._resolve_tid(tid)
         info = self.channels.get(tid) or self.channels['chinese']
         path = info['path']
-        # 分页: /zh/chinese_random/all/index.html 或 index_2.html
         if pg <= 1:
             url = self.host + path
         else:
             url = self.host + path.replace('index.html', 'index_%d.html' % pg)
-            if url == self.host + path:
-                url = self.host + path + ('&' if '?' in path else '?') + 'page=%d' % pg
         html = self._get(url)
         videos = self._parse_list(html)
-        if not videos and pg > 1:
-            # 备选分页
-            url2 = re.sub(r'index(?:_\d+)?\.html', 'index_%d.html' % pg, self.host + path)
-            html = self._get(url2)
-            videos = self._parse_list(html)
         pagecount = pg + 1 if len(videos) >= 12 else pg
         return {'list': videos, 'page': pg, 'pagecount': pagecount, 'limit': 24, 'total': 9999}
 
@@ -291,17 +343,19 @@ class Spider(BaseSpider):
             if m:
                 name = re.sub(r'\s*18AV.*$', '', m.group(1), flags=re.I).strip()
         pic = ''
-        m = re.search(r'id="player-wrap"[^>]*>[\s\S]*?<img[^>]+src=["\']([^"\']+)', html, re.I)
+        m = re.search(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)', html, re.I)
         if m:
             pic = self._abs(m.group(1))
-        if not pic:
-            m = re.search(r'property=["\']og:image["\'][^>]*content=["\']([^"\']+)', html, re.I)
-            if m:
-                pic = self._abs(m.group(1))
         plays = self._extract_plays(html, page_url)
-        if not plays:
-            plays = [('正片', page_url)]
-        play_url = '#'.join(['%s$%s' % (n, u) for n, u in plays])
+        # 线路1：详情页（播放时重新解码，最新地址）
+        # 线路2+：已解析的 m3u8（可直连）
+        lines = [('正片', page_url)]
+        for n, u in plays:
+            if u and u != page_url:
+                lines.append((n, u))
+        if len(lines) == 1 and not plays:
+            pass  # only page
+        play_url = '#'.join(['%s$%s' % (n, u) for n, u in lines])
         result['list'] = [{
             'vod_id': page_url,
             'vod_name': name or '18AV',
@@ -328,10 +382,6 @@ class Spider(BaseSpider):
             url += '&page=%d' % pg
         html = self._get(url)
         videos = self._parse_list(html)
-        if not videos:
-            url2 = self.host + '/zh/search/' + quote(key) + '.html'
-            html = self._get(url2)
-            videos = self._parse_list(html)
         return {
             'list': videos,
             'page': pg,
@@ -341,33 +391,47 @@ class Spider(BaseSpider):
         }
 
     def playerContent(self, flag, id, vipFlags):
+        play = str(id or '').strip()
         header = {
             'User-Agent': self.ua,
-            'Referer': self.host + '/',
+            'Referer': self.host + '/js/player/play.php',
             'Origin': self.host,
             'Accept': '*/*',
+            'Accept-Language': 'zh-CN,zh;q=0.9',
         }
-        play = str(id or '').strip()
+        if play.startswith('//'):
+            play = 'https:' + play
         if play.startswith('http') and re.search(r'\.(m3u8|mp4)(\?|$)', play, re.I):
             return {'parse': 0, 'url': play, 'header': header}
-        # play.php 页 → 再抽 m3u8
         if 'play.php' in play:
-            html = self._get(play, referer=self.host + self.base + '/')
-            for u in re.findall(r'(?:src|file|url)\s*[:=]\s*[\'"]([^\'"]+\.m3u8[^\'"]*)', html or '', re.I):
-                return {'parse': 0, 'url': self._abs(u), 'header': header}
-            for u in re.findall(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', html or ''):
-                return {'parse': 0, 'url': u, 'header': header}
+            m3u8s = self._m3u8_from_play_page(play, self.host + self.base + '/')
+            if m3u8s:
+                return {'parse': 0, 'url': m3u8s[0][1], 'header': header}
         if not play.startswith('http'):
             play = self._abs(play)
+        # 详情页重新解码，拿最新 m3u8
+        if '_content/' in play or play.endswith('.html'):
+            html = self._get(play, referer=self.host + self.base + '/')
+            plays = self._extract_plays(html or '', play)
+            if plays:
+                u = plays[0][1]
+                if u.startswith('//'):
+                    u = 'https:' + u
+                if re.search(r'\.(m3u8|mp4)(\?|$)', u, re.I):
+                    return {'parse': 0, 'url': u, 'header': header}
+                if 'play.php' in u:
+                    return self.playerContent(flag, u, vipFlags)
         html = self._get(play, referer=self.host + self.base + '/')
         plays = self._extract_plays(html or '', play)
         if plays:
             u = plays[0][1]
+            if u.startswith('//'):
+                u = 'https:' + u
             if re.search(r'\.(m3u8|mp4)(\?|$)', u, re.I):
                 return {'parse': 0, 'url': u, 'header': header}
             if 'play.php' in u:
                 return self.playerContent(flag, u, vipFlags)
-        return {'parse': 1, 'jx': '1', 'url': play, 'header': header}
+        return {'parse': 0, 'url': '', 'header': header}
 
     def isVideoFormat(self, url):
         return bool(url and re.search(r'\.(m3u8|mp4|ts)(\?|$)', url, re.I))
